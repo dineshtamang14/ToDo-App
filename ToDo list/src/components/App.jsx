@@ -4,6 +4,7 @@ function App() {
   const [list, setList] = useState([]);
 
   const tasks = (e)=>{
+    e.preventDefault();
     const newTask = e.target.value;
     setList(...newTask)
   }
@@ -14,10 +15,12 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <div className="form">
+      <form onSubmit={tasks}>
         <input name="task" type="text" />
         <button>
-          <span onClick={tasks}>Add</span>
+          <span>Add</span>
         </button>
+      </form>
       </div>
       <div>
         <ul>
